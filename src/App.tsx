@@ -21,6 +21,7 @@ import {
   X
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const PROJECTS = [
   {
@@ -168,10 +169,10 @@ export default function App() {
   // Layer 3: HUD Vertical Offset (Subtle shift)
   const hudY = useSpring(useTransform(scrollY, [0, 1000], [0, -50]), springConfig);
 
-  // Contact Form Logic
+  // Formspree Contact Form Integration
+  const [state, handleSubmit] = useForm("xpqkygqo");
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({ email: false, name: false });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -186,17 +187,13 @@ export default function App() {
       setErrors(prev => ({ ...prev, name: value.length > 0 && value.length < 2 }));
     }
   };
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!errors.email && !errors.name && formState.name && formState.email) {
-      setIsSubmitted(true);
-      // Reset after success
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormState({ name: "", email: "", message: "" });
-      }, 5000);
+
+  // Check if we should reset form after success
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormState({ name: "", email: "", message: "" });
     }
-  };
+  }, [state.succeeded]);
 
   return (
     <div className="min-h-screen bg-dark overflow-x-hidden">
@@ -621,7 +618,7 @@ export default function App() {
 
             <FadeInUp delay={0.2}>
               <div className="p-8 md:p-12 rounded-[3.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl relative overflow-hidden">
-                {isSubmitted ? (
+                {state.succeeded ? (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -632,9 +629,18 @@ export default function App() {
                     </div>
                     <h3 className="font-display text-4xl font-bold mb-4 uppercase tracking-tighter">Bericht Verzonden!</h3>
                     <p className="text-white/50 text-lg font-light leading-relaxed">
-                      Bedankt voor je aanvraag, {formState.name.split(' ')[0]}. <br />
+                      Bedankt voor je aanvraag. <br />
                       Ik neem zo snel mogelijk contact met je op.
                     </p>
+                    <motion.button 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1 }}
+                      onClick={() => window.location.reload()}
+                      className="mt-8 text-accent text-xs uppercase tracking-widest hover:underline"
+                    >
+                      Nog een bericht sturen
+                    </motion.button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-8">
@@ -651,6 +657,7 @@ export default function App() {
                           onChange={handleInputChange}
                           className={`w-full ${errors.name ? 'border-red-500/50' : formState.name.length >= 2 ? 'border-accent/50' : 'border-white/10'}`}
                         />
+                        <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-[10px] mt-1 ml-2" />
                         {formState.name.length >= 2 && !errors.name && (
                           <CheckCircle2 size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-accent" />
                         )}
@@ -670,6 +677,7 @@ export default function App() {
                           onChange={handleInputChange}
                           className={`w-full ${errors.email ? 'border-red-500/50' : validateEmail(formState.email) ? 'border-accent/50' : 'border-white/10'}`}
                         />
+                        <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-[10px] mt-1 ml-2" />
                         {validateEmail(formState.email) && (
                           <CheckCircle2 size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-accent" />
                         )}
@@ -687,15 +695,22 @@ export default function App() {
                         onChange={handleInputChange}
                         className="w-full resize-none"
                       />
+                      <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-[10px] mt-1 ml-2" />
                     </div>
 
                     <button 
                       type="submit"
-                      disabled={errors.email || errors.name || !formState.name || !formState.email}
+                      disabled={state.submitting || errors.email || errors.name || !formState.name || !formState.email}
                       className="w-full py-6 bg-white text-dark rounded-[2rem] font-display font-black text-lg uppercase tracking-widest hover:bg-accent transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white active:scale-[0.98] shadow-2xl shadow-black"
                     >
-                      Bespreek project
+                      {state.submitting ? "Verzenden..." : "Bespreek project"}
                     </button>
+                    
+                    {state.errors && state.errors.length > 0 && !state.errors.find(e => e.field) && (
+                      <p className="text-red-500 text-center text-xs mt-4">
+                        Er is iets misgegaan. Probeer het later opnieuw.
+                      </p>
+                    )}
                   </form>
                 )}
               </div>
