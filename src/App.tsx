@@ -26,21 +26,21 @@ import { useForm, ValidationError } from "@formspree/react";
 const PROJECTS = [
   {
     title: "Siebon",
-    description: "Professionele website voor een loodgieter in Roeselare. Lokale SEO en bliksemsnelle performance.",
+    description: "Professional website for a local plumbing service. Optimized for local SEO and lightning-fast performance.",
     link: "https://siebon.com",
     image: "/assets/projects/siebon.png",
-    tags: ["Loodgieter Roeselare", "Local SEO", "AI-Built Website"]
+    tags: ["Local Business", "Local SEO", "AI-Built Website"]
   },
   {
-    title: "Jong Ondernemend België",
-    description: "Netwerkplatform voor jonge Belgische ondernemers. Community-gedreven design en moderne architectuur.",
+    title: "Young Entrepreneurs",
+    description: "Networking platform for young entrepreneurs. Community-driven design and modern architecture.",
     link: "https://jongondernemendbelgie.be",
     image: "/assets/projects/job.png",
-    tags: ["Ondernemen België", "UX/UI Design", "Digital Identity"]
+    tags: ["Community", "UX/UI Design", "Digital Identity"]
   },
   {
     title: "Examiqo",
-    description: "AI-app voor examenoptimalisatie. Focus op schaalbare infrastructuur en intuïtieve user journey.",
+    description: "AI-app for exam optimization. Focus on scalable infrastructure and an intuitive user journey.",
     image: "/assets/projects/examiqo.png",
     link: "https://examiqo.com",
     tags: ["AI Web App", "SaaS Development", "Performance"]
@@ -49,24 +49,24 @@ const PROJECTS = [
 
 const SERVICES = [
   {
-    name: "Starter Website",
-    features: ["One-page design", "Mobile responsive", "Basis SEO", "Contactformulier"],
+    name: "Starter — €349",
+    features: ["1-page website", "Google Business Profile", "Mini Photo Session", "Hosting Setup"],
     accent: "border-white/10"
   },
   {
-    name: "Professional",
-    features: ["Max 5 pagina's", "Custom design", "AI Content optimalisatie", "Google Business integratie"],
+    name: "Professional — €649",
+    features: ["3-5 page website", "Full GBP & Reviews Strategy", "Basic SEO & Meta tags", "Standard Photo Session"],
     accent: "border-accent",
     featured: true
   },
   {
-    name: "Premium + Booking",
-    features: ["Full website", "Online reservatiesysteem", "Betalingsintegratie", "Advanced SEO"],
+    name: "Growth — €999",
+    features: ["Professional package +", "HyperFrames Promo Video", "Social Media Templates", "Google Ads Advice"],
     accent: "border-white/10"
   },
   {
-    name: "Onderhoud",
-    features: ["Hosting inbegrepen", "Security updates", "Content aanpassingen", "Performance monitoring"],
+    name: "Care — €49/mo",
+    features: ["Hosting included", "Security updates", "Google Reviews management", "Monthly reports"],
     accent: "border-white/10"
   }
 ];
@@ -255,8 +255,8 @@ export default function App() {
           <div className="hidden md:flex gap-8 items-center font-display text-sm uppercase tracking-widest font-medium">
             {[
               { id: "services", label: "Services" },
-              { id: "portfolio", label: "Portfolio" },
-              { id: "about", label: "Over mij" }
+              { id: "portfolio", label: "Work" },
+              { id: "about", label: "About" }
             ].map((item) => (
               <a 
                 key={item.id}
@@ -283,7 +283,7 @@ export default function App() {
                   : 'bg-accent/10 border border-accent/20 text-accent hover:bg-accent hover:text-dark'
               }`}
             >
-              Offerte
+              Get a Quote
             </a>
           </div>
 
@@ -306,8 +306,8 @@ export default function App() {
           >
             {[
               { id: "services", label: "Services" },
-              { id: "portfolio", label: "Portfolio" },
-              { id: "about", label: "Over mij" },
+              { id: "portfolio", label: "Work" },
+              { id: "about", label: "About" },
               { id: "contact", label: "Contact" }
             ].map((item) => (
               <a 
@@ -391,7 +391,7 @@ export default function App() {
             <FadeInUp>
               <span className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-white/10 rounded-full font-display text-white/60 text-[10px] uppercase tracking-[0.3em] bg-white/5 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Freelance Web Designer uit Roeselare
+                Digital Architecture in Lagos, Algarve
               </span>
               
               <h1 id="hero-title" className="font-display font-black text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] tracking-tighter mb-12 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent text-glow">
@@ -401,16 +401,16 @@ export default function App() {
               </h1>
               
               <p className="text-xl md:text-2xl text-white/60 max-w-2xl mb-16 leading-relaxed font-light italic">
-                Gedreven door resultaat. Ik ontwerp websites die niet alleen mooi zijn, maar <span className="text-white font-medium">concreet klanten opleveren</span> voor lokale ondernemers.
+                Data shows 78% of local SMEs lack a solid online presence. I design AI-native websites that <span className="text-white font-medium">generate tangible results</span> and bring you more customers.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <a href="#portfolio" className="btn-premium-primary" aria-label="Bekijk mijn afgeronde projecten in Roeselare">
-                  Bekijk projecten
+                  View Projects
                   <ArrowRight size={18} />
                 </a>
                 <a href="#services" className="btn-premium-secondary" aria-label="Bekijk de diensten van Oskar Lebon">
-                  Onze diensten
+                  Our Services
                 </a>
               </div>
             </FadeInUp>
@@ -427,7 +427,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <FadeInUp>
             <div className="mb-20">
-              <h2 id="services-title" className="font-display text-4xl md:text-7xl font-bold tracking-tighter mb-4 uppercase">Diensten</h2>
+              <h2 id="services-title" className="font-display text-4xl md:text-7xl font-bold tracking-tighter mb-4 uppercase">Services</h2>
               <div className="h-1.5 w-24 bg-accent" aria-hidden="true" />
             </div>
           </FadeInUp>
@@ -440,7 +440,7 @@ export default function App() {
                 >
                   {s.featured && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-accent text-dark font-display text-[11px] font-black uppercase tracking-widest rounded-full shadow-lg">
-                      Aanbevolen
+                      Recommended
                     </span>
                   )}
                   <h3 className="font-display font-bold text-xl mb-8 uppercase tracking-tight">{s.name}</h3>
@@ -454,10 +454,10 @@ export default function App() {
                   </ul>
                   <a 
                     href="#contact"
-                    onClick={() => setFormState(prev => ({ ...prev, message: `Ik heb interesse in het ${s.name} pakket.` }))}
+                    onClick={() => setFormState(prev => ({ ...prev, message: `I am interested in the ${s.name} package.` }))}
                     className={`w-full py-5 rounded-2xl font-display font-black text-xs uppercase text-center block transition-all active:scale-[0.96] tracking-[0.1em] ${s.featured ? 'bg-accent text-dark hover:brightness-110' : 'bg-white/5 hover:bg-white/10'}`}
                   >
-                    Vraag offerte aan
+                    Request Quote
                   </a>
                 </div>
               </FadeInUp>
@@ -476,10 +476,10 @@ export default function App() {
           <FadeInUp>
             <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
               <div className="max-w-2xl">
-                <h2 id="portfolio-title" className="font-display text-4xl md:text-7xl font-bold tracking-tighter mb-6 italic uppercase">Recent Werk</h2>
+                <h2 id="portfolio-title" className="font-display text-4xl md:text-7xl font-bold tracking-tighter mb-6 italic uppercase">Recent Work</h2>
                 <p className="text-white/50 text-xl font-light italic leading-relaxed">
-                  Projecten gericht op snelheid, conversie en perfecte user experience. <br />
-                  <span className="text-accent/60 opacity-80 underline underline-offset-4 decoration-accent/30">ELK DETAIL TELT.</span>
+                  Projects focused on speed, conversion, and perfect user experience. <br />
+                  <span className="text-accent/60 opacity-80 underline underline-offset-4 decoration-accent/30">EVERY DETAIL MATTERS.</span>
                 </p>
               </div>
             </div>
@@ -560,15 +560,15 @@ export default function App() {
  
             <div className="space-y-10 italic">
               <FadeInUp>
-                <h2 id="about-title" className="font-display text-5xl md:text-8xl font-bold tracking-tighter italic uppercase leading-[0.9]">Over <br /> <span className="text-accent underline decoration-white/10 underline-offset-8">Mij</span></h2>
+                <h2 id="about-title" className="font-display text-5xl md:text-8xl font-bold tracking-tighter italic uppercase leading-[0.9]">About <br /> <span className="text-accent underline decoration-white/10 underline-offset-8">Me</span></h2>
               </FadeInUp>
               <FadeInUp delay={0.2}>
                 <div className="space-y-6">
                   <p className="text-2xl text-white/80 font-light leading-relaxed">
-                    Mijn naam is <span className="text-accent font-medium">Oskar Lebon</span>. Ik ben een jonge web designer gevestigd in <span className="underline decoration-accent/30 underline-offset-8 font-medium italic">Roeselare, West-Vlaanderen</span>.
+                    My name is <span className="text-accent font-medium">Oskar Lebon</span>. I am a digital architect based in <span className="underline decoration-accent/30 underline-offset-8 font-medium italic">Lagos, Algarve</span>.
                   </p>
                   <p className="text-lg text-white/50 font-light leading-relaxed">
-                    Terwijl anderen nog vastzitten in oude processen, gebruik ik de nieuwste AI tools om sneller, slimmer en met meer precisie te bouwen. Mijn focus ligt niet alleen op esthetiek, maar op resultaten. Een goeie website is pas geslaagd als hij zorgt voor meer succes.
+                    While traditional agencies take weeks, I use AI-native workflows to deliver complete digital packages in days. Website, professional photos, and Google Business Profile—all handled for you. A good website is only successful if it brings in more business.
                   </p>
                 </div>
               </FadeInUp>
@@ -576,7 +576,7 @@ export default function App() {
                 <div className="flex flex-col gap-6 font-display text-sm uppercase tracking-[0.3em] text-white/60 pt-4">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"><MapPin size={18} className="text-accent" /></div>
-                    Roeselare, België
+                    Lagos, Portugal
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"><Zap size={18} className="text-accent" /></div>
@@ -597,19 +597,19 @@ export default function App() {
               <div className="max-w-xl">
                 <h2 id="contact-title" className="font-display text-6xl md:text-9xl font-bold tracking-tighter mb-10 italic leading-[0.8]">LET'S <span className="text-accent">GO.</span></h2>
                 <p className="text-xl text-white/50 mb-12 font-light leading-relaxed italic">
-                  Heb je een project of wil je weten hoe ik jouw zaak kan versnellen? <br className="hidden md:block" /> 
-                  Laat je gegevens achter en ik kom binnen 24u bij je terug.
+                  Have a project or want to know how I can accelerate your business? <br className="hidden md:block" /> 
+                  Leave your details and I'll get back to you within 24 hours.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6">
                   <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 group hover:border-accent/20 transition-all flex-1">
                      <Mail size={32} className="text-accent mb-6" />
-                     <div className="font-display uppercase tracking-widest text-xs text-white/40 mb-2">E-mailadres</div>
+                     <div className="font-display uppercase tracking-widest text-xs text-white/40 mb-2">Email Address</div>
                      <div className="text-lg font-medium tracking-tight">oskar.lebon@gmail.com</div>
                   </div>
                   <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 group hover:border-accent/20 transition-all flex-1">
                      <Phone size={32} className="text-accent mb-6" />
-                     <div className="font-display uppercase tracking-widest text-xs text-white/40 mb-2">Telefoon</div>
+                     <div className="font-display uppercase tracking-widest text-xs text-white/40 mb-2">Phone</div>
                      <div className="text-lg font-medium tracking-tight">+32 499 48 02 34</div>
                   </div>
                 </div>
@@ -627,10 +627,10 @@ export default function App() {
                     <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mb-8">
                        <CheckCircle2 size={48} className="text-accent" />
                     </div>
-                    <h3 className="font-display text-4xl font-bold mb-4 uppercase tracking-tighter">Bericht Verzonden!</h3>
+                    <h3 className="font-display text-4xl font-bold mb-4 uppercase tracking-tighter">Message Sent!</h3>
                     <p className="text-white/50 text-lg font-light leading-relaxed">
-                      Bedankt voor je aanvraag. <br />
-                      Ik neem zo snel mogelijk contact met je op.
+                      Thank you for your request. <br />
+                      I will contact you as soon as possible.
                     </p>
                     <motion.button 
                       initial={{ opacity: 0 }}
@@ -639,20 +639,20 @@ export default function App() {
                       onClick={() => window.location.reload()}
                       className="mt-8 text-accent text-xs uppercase tracking-widest hover:underline"
                     >
-                      Nog een bericht sturen
+                      Send another message
                     </motion.button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="space-y-3">
-                      <label htmlFor="name" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">Naam</label>
+                      <label htmlFor="name" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">Name</label>
                       <div className="relative">
                         <input 
                           type="text" 
                           id="name" 
                           name="name"
                           required
-                          placeholder="Je volledige naam"
+                          placeholder="Your full name"
                           value={formState.name}
                           onChange={handleInputChange}
                           className={`w-full ${errors.name ? 'border-red-500/50' : formState.name.length >= 2 ? 'border-accent/50' : 'border-white/10'}`}
@@ -665,14 +665,14 @@ export default function App() {
                     </div>
 
                     <div className="space-y-3">
-                      <label htmlFor="email" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">E-mail</label>
+                      <label htmlFor="email" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">Email</label>
                       <div className="relative">
                         <input 
                           type="email" 
                           id="email" 
                           name="email"
                           required
-                          placeholder="jouw@email.be"
+                          placeholder="your@email.com"
                           value={formState.email}
                           onChange={handleInputChange}
                           className={`w-full ${errors.email ? 'border-red-500/50' : validateEmail(formState.email) ? 'border-accent/50' : 'border-white/10'}`}
@@ -685,12 +685,12 @@ export default function App() {
                     </div>
 
                     <div className="space-y-3">
-                      <label htmlFor="message" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">Bericht</label>
+                      <label htmlFor="message" className="font-display text-xs uppercase tracking-[0.2em] text-white/40 pl-2">Message</label>
                       <textarea 
                         id="message" 
                         name="message"
                         rows={4}
-                        placeholder="Vertel me over je project..."
+                        placeholder="Tell me about your project..."
                         value={formState.message}
                         onChange={handleInputChange}
                         className="w-full resize-none"
@@ -703,12 +703,12 @@ export default function App() {
                       disabled={state.submitting || errors.email || errors.name || !formState.name || !formState.email}
                       className="w-full py-6 bg-white text-dark rounded-[2rem] font-display font-black text-lg uppercase tracking-widest hover:bg-accent transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white active:scale-[0.98] shadow-2xl shadow-black"
                     >
-                      {state.submitting ? "Verzenden..." : "Bespreek project"}
+                      {state.submitting ? "Sending..." : "Discuss Project"}
                     </button>
                     
                     {state.errors && state.errors.length > 0 && !state.errors.find(e => e.field) && (
                       <p className="text-red-500 text-center text-xs mt-4">
-                        Er is iets misgegaan. Probeer het later opnieuw.
+                        Something went wrong. Please try again later.
                       </p>
                     )}
                   </form>
@@ -749,12 +749,12 @@ export default function App() {
 
             {/* Column 2: Navigation */}
             <div className="space-y-8">
-              <h4 className="font-display text-xs uppercase tracking-[0.3em] font-black text-white/20">Navigatie</h4>
+              <h4 className="font-display text-xs uppercase tracking-[0.3em] font-black text-white/20">Navigation</h4>
               <ul className="space-y-4 font-display text-sm uppercase tracking-widest">
                 <li><a href="#home" className="hover:text-accent transition-colors block">Home</a></li>
-                <li><a href="#services" className="hover:text-accent transition-colors block">Diensten</a></li>
-                <li><a href="#portfolio" className="hover:text-accent transition-colors block">Portfolio</a></li>
-                <li><a href="#about" className="hover:text-accent transition-colors block">Over mij</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors block">Services</a></li>
+                <li><a href="#portfolio" className="hover:text-accent transition-colors block">Work</a></li>
+                <li><a href="#about" className="hover:text-accent transition-colors block">About</a></li>
               </ul>
             </div>
 
@@ -788,7 +788,7 @@ export default function App() {
                  </a>
               </div>
               <p className="text-[10px] text-white/20 uppercase tracking-widest leading-relaxed">
-                Volg mijn proces en <br /> dagelijkse updates.
+                Follow my process and <br /> daily updates.
               </p>
             </div>
           </div>
@@ -812,7 +812,7 @@ export default function App() {
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="p-5 bg-accent text-dark rounded-full shadow-[0_0_30px_-5px_rgba(0,209,255,0.5)] hover:scale-110 active:scale-90 transition-all border border-accent/20"
-            aria-label="Terug naar boven"
+            aria-label="Back to top"
           >
             <ChevronUp size={24} strokeWidth={3} />
           </motion.button>
