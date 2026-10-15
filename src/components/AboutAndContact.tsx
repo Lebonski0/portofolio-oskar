@@ -36,11 +36,11 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#FAF8F5] relative">
+    <section id="contact" className="py-16 sm:py-24 bg-[#FAF8F5] relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         {/* Two-Column Symmetrical Layout */}
-        <div id="contact" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Human Story & Direct Reach */}
           <div className="lg:col-span-5 flex flex-col justify-between">

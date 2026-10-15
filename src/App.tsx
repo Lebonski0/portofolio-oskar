@@ -32,7 +32,7 @@ export default function App() {
   }, [lang]);
 
   useEffect(() => {
-    const sections = ["portfolio", "services", "about", "contact"];
+    const sections = ["portfolio", "services", "contact"];
     const observerOptions = {
       root: null,
       rootMargin: "-25% 0px -50% 0px",

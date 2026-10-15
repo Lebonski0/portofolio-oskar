@@ -50,11 +50,6 @@ export default function Footer({ t }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#D36241] transition-colors">
-                  {t.about}
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="hover:text-[#D36241] transition-colors">
                   {t.contact}
                 </a>
