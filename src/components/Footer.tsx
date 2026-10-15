@@ -12,14 +12,14 @@ export default function Footer({ t }: FooterProps) {
 
   return (
     <footer className="bg-[#FAF8F5] border-t border-[rgba(26,23,20,0.08)] py-12 sm:py-16 relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 pb-10 border-b border-[rgba(26,23,20,0.06)]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 pb-8 sm:pb-10 border-b border-[rgba(26,23,20,0.06)]">
           
           {/* Column 1: Brand */}
           <div className="md:col-span-5 flex flex-col items-start">
             <a
               href="#"
-              className="flex items-center gap-2 font-sans font-bold text-lg sm:text-xl tracking-[0.16em] text-[#1A1714] uppercase mb-3"
+              className="flex items-center gap-2 font-sans font-bold text-lg sm:text-xl tracking-[0.16em] text-[#1A1714] uppercase mb-2.5"
             >
               <span>OSKAR LEBON</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#D36241]" />

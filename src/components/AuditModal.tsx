@@ -36,7 +36,7 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,26 +53,26 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-lg bg-[#FAF8F5] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[rgba(26,23,20,0.08)] z-10 my-8"
+            className="relative w-full max-w-lg bg-[#FAF8F5] rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl border border-[rgba(26,23,20,0.08)] z-10 my-6 sm:my-8"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 p-2 rounded-full text-[#6E675F] hover:text-[#1A1714] hover:bg-[#F3EFEA] transition-colors"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full text-[#6E675F] hover:text-[#1A1714] hover:bg-[#F3EFEA] transition-colors"
               aria-label="Sluit modal"
             >
               <X size={20} />
             </button>
 
             {state.succeeded ? (
-              <div className="py-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-[#EFF4EA] text-[#556B2F] rounded-full flex items-center justify-center">
-                  <CheckCircle2 size={32} />
+              <div className="py-6 sm:py-8 text-center">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-[#EFF4EA] text-[#556B2F] rounded-full flex items-center justify-center">
+                  <CheckCircle2 size={30} />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#1A1714] mb-2">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1A1714] mb-2">
                   {t.successTitle}
                 </h3>
-                <p className="text-sm text-[#6E675F] leading-relaxed max-w-sm mx-auto mb-6">
+                <p className="text-xs sm:text-sm text-[#6E675F] leading-relaxed max-w-sm mx-auto mb-6">
                   {t.successDesc}
                 </p>
                 <button
@@ -84,20 +84,20 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
               </div>
             ) : (
               <>
-                <div className="flex items-center gap-2 mb-2 text-[#D36241] font-semibold text-xs tracking-wider uppercase">
-                  <Sparkles size={16} />
+                <div className="flex items-center gap-2 mb-1.5 text-[#D36241] font-semibold text-[11px] sm:text-xs tracking-wider uppercase">
+                  <Sparkles size={14} />
                   <span>{t.freeTag}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1714] mb-2 leading-snug">
+                <h3 className="font-serif text-xl sm:text-3xl font-bold text-[#1A1714] mb-1.5 leading-snug">
                   {t.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#6E675F] leading-relaxed mb-5">
+                <p className="text-xs sm:text-sm text-[#6E675F] leading-relaxed mb-4 sm:mb-5">
                   {t.subtitle}
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-3.5">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   <input type="hidden" name="type" value="Gratis Website Audit" />
 
                   <div>
@@ -113,7 +113,7 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
                         placeholder={t.urlPlaceholder}
                         value={website}
                         onChange={(e) => setWebsite(e.target.value)}
-                        className="w-full pl-10 text-xs sm:text-sm"
+                        className="w-full pl-10 text-base sm:text-sm py-2 px-3"
                       />
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
                         placeholder={t.namePlaceholder}
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
-                        className="w-full pl-10 text-xs sm:text-sm"
+                        className="w-full pl-10 text-base sm:text-sm py-2 px-3"
                       />
                     </div>
                   </div>
@@ -149,7 +149,7 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
                         placeholder={t.emailPlaceholder}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full pl-10 text-xs sm:text-sm"
+                        className="w-full pl-10 text-base sm:text-sm py-2 px-3"
                       />
                     </div>
                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-xs mt-1" />
@@ -167,12 +167,12 @@ export default function AuditModal({ isOpen, onClose, t }: AuditModalProps) {
                         placeholder={t.phonePlaceholder}
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full pl-10 text-xs sm:text-sm"
+                        className="w-full pl-10 text-base sm:text-sm py-2 px-3"
                       />
                     </div>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-1.5">
                     <button
                       type="submit"
                       disabled={state.submitting || !website || !email}

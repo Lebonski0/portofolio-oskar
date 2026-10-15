@@ -36,8 +36,8 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
   };
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-[#FAF8F5] relative">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="about" className="py-16 sm:py-24 bg-[#FAF8F5] relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
         
         {/* Two-Column Symmetrical Layout */}
         <div id="contact" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
@@ -45,37 +45,37 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
           {/* Left Column: Human Story & Direct Reach */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D36241] mb-2.5">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D36241] mb-2">
                 <Sparkles size={14} />
                 <span>{t.tag}</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1A1714] tracking-tight mb-5 leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1A1714] tracking-tight mb-4 leading-tight">
                 {t.title}
               </h2>
 
-              <div className="space-y-4 text-sm sm:text-base text-[#6E675F] leading-relaxed mb-6">
+              <div className="space-y-3.5 text-sm sm:text-base text-[#6E675F] leading-relaxed mb-6">
                 <p>{t.p1}</p>
                 <p>{t.p2}</p>
               </div>
             </div>
 
             {/* Direct Contact Cards */}
-            <div className="space-y-3 pt-3 border-t border-[rgba(26,23,20,0.08)]">
+            <div className="space-y-2.5 sm:space-y-3 pt-4 border-t border-[rgba(26,23,20,0.08)]">
               {/* Email Card */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
+              <div className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#FBF0EB] text-[#D36241] flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-[#FBF0EB] text-[#D36241] flex items-center justify-center shrink-0">
                     <Mail size={16} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-[10px] uppercase tracking-wider text-[#9E968D] font-medium">{t.emailLabel}</div>
-                    <div className="text-xs sm:text-sm font-semibold text-[#1A1714]">oskar.lebon@gmail.com</div>
+                    <div className="text-xs sm:text-sm font-semibold text-[#1A1714] truncate">oskar.lebon@gmail.com</div>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard("oskar.lebon@gmail.com", "email")}
-                  className="p-1.5 rounded-lg text-[#6E675F] hover:bg-[#F3EFEA] hover:text-[#1A1714] transition-colors"
+                  className="p-2 rounded-lg text-[#6E675F] hover:bg-[#F3EFEA] hover:text-[#1A1714] transition-colors shrink-0"
                   aria-label="Copy email"
                 >
                   {copiedEmail ? <Check size={16} className="text-[#556B2F]" /> : <Copy size={16} />}
@@ -83,19 +83,19 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
               </div>
 
               {/* Phone Card */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
+              <div className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#EFF4EA] text-[#556B2F] flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-[#EFF4EA] text-[#556B2F] flex items-center justify-center shrink-0">
                     <Phone size={16} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-[10px] uppercase tracking-wider text-[#9E968D] font-medium">{t.phoneLabel}</div>
-                    <div className="text-xs sm:text-sm font-semibold text-[#1A1714]">+32 499 48 02 34</div>
+                    <div className="text-xs sm:text-sm font-semibold text-[#1A1714] truncate">+32 499 48 02 34</div>
                   </div>
                 </div>
                 <button
                   onClick={() => copyToClipboard("+32499480234", "phone")}
-                  className="p-1.5 rounded-lg text-[#6E675F] hover:bg-[#F3EFEA] hover:text-[#1A1714] transition-colors"
+                  className="p-2 rounded-lg text-[#6E675F] hover:bg-[#F3EFEA] hover:text-[#1A1714] transition-colors shrink-0"
                   aria-label="Copy phone"
                 >
                   {copiedPhone ? <Check size={16} className="text-[#556B2F]" /> : <Copy size={16} />}
@@ -103,11 +103,11 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
               </div>
 
               {/* Location Card */}
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
-                <div className="w-9 h-9 rounded-xl bg-[#F3EFEA] text-[#1A1714] flex items-center justify-center">
+              <div className="flex items-center gap-3 p-3 sm:p-3.5 rounded-2xl bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] shadow-xs">
+                <div className="w-9 h-9 rounded-xl bg-[#F3EFEA] text-[#1A1714] flex items-center justify-center shrink-0">
                   <MapPin size={16} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-[10px] uppercase tracking-wider text-[#9E968D] font-medium">{t.locationLabel}</div>
                   <div className="text-xs sm:text-sm font-semibold text-[#1A1714]">{t.locationVal}</div>
                 </div>
@@ -117,10 +117,10 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
 
           {/* Right Column: Symmetrical Contact Form */}
           <div className="lg:col-span-7 flex flex-col">
-            <div className="bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] rounded-3xl p-7 sm:p-9 shadow-craft h-full flex flex-col justify-between">
+            <div className="bg-[#FFFFFF] border border-[rgba(26,23,20,0.08)] rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-craft h-full flex flex-col justify-between">
               
               {state.succeeded ? (
-                <div className="py-12 text-center my-auto">
+                <div className="py-10 sm:py-12 text-center my-auto">
                   <div className="w-16 h-16 mx-auto mb-4 bg-[#EFF4EA] text-[#556B2F] rounded-full flex items-center justify-center">
                     <CheckCircle2 size={32} />
                   </div>
@@ -144,8 +144,8 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                 </div>
               ) : (
                 <>
-                  <div className="mb-5">
-                    <h3 className="font-serif text-2xl font-bold text-[#1A1714] mb-1">
+                  <div className="mb-4 sm:mb-5">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1A1714] mb-1">
                       {t.formTitle}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#6E675F]">
@@ -153,10 +153,10 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4 flex-grow flex flex-col justify-between">
-                    <div className="space-y-3.5">
-                      {/* Name & Phone in 2 Columns */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <form onSubmit={handleSubmit} className="space-y-3.5 flex-grow flex flex-col justify-between">
+                    <div className="space-y-3 sm:space-y-3.5">
+                      {/* Name & Phone */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                         <div>
                           <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1A1714] mb-1">
                             {t.nameLabel}
@@ -168,7 +168,7 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                             placeholder={t.namePlaceholder}
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full text-xs sm:text-sm"
+                            className="w-full text-base sm:text-sm py-2.5 px-3.5"
                           />
                         </div>
 
@@ -182,7 +182,7 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                             placeholder={t.phonePlaceholderInput}
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            className="w-full text-xs sm:text-sm"
+                            className="w-full text-base sm:text-sm py-2.5 px-3.5"
                           />
                         </div>
                       </div>
@@ -199,7 +199,7 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                           placeholder={t.emailPlaceholder}
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full text-xs sm:text-sm"
+                          className="w-full text-base sm:text-sm py-2.5 px-3.5"
                         />
                         <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-xs mt-1" />
                       </div>
@@ -213,7 +213,7 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                           name="dienst"
                           value={plan}
                           onChange={(e) => setPlan(e.target.value)}
-                          className="w-full text-xs sm:text-sm cursor-pointer"
+                          className="w-full text-base sm:text-sm py-2.5 px-3.5 cursor-pointer"
                         >
                           <option value="Lokale Zichtbaarheid (€190)">{t.options.local}</option>
                           <option value="Compleet Online (€450)">{t.options.complete}</option>
@@ -236,7 +236,7 @@ export default function AboutAndContact({ selectedPlan, t }: AboutAndContactProp
                           placeholder={t.messagePlaceholder}
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
-                          className="w-full text-xs sm:text-sm resize-none"
+                          className="w-full text-base sm:text-sm py-2.5 px-3.5 resize-none"
                         />
                         <ValidationError prefix="Bericht" field="bericht" errors={state.errors} className="text-red-600 text-xs mt-1" />
                       </div>

@@ -65,21 +65,21 @@ export default function LogoBar({ t }: LogoBarProps) {
 
   return (
     <div className="w-full bg-[#F3EFEA] border-b border-[rgba(26,23,20,0.06)] py-4 sm:py-5">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-between items-center gap-3.5 sm:gap-5">
           {TOOLS.map((tool, idx) => (
             <div
               key={idx}
               className="flex items-center gap-2.5 opacity-85 hover:opacity-100 transition-opacity"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[rgba(26,23,20,0.06)] flex items-center justify-center shadow-xs">
+              <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[rgba(26,23,20,0.06)] flex items-center justify-center shrink-0 shadow-xs">
                 {tool.icon}
               </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-xs text-[#1A1714]">
+              <div className="flex flex-col min-w-0">
+                <span className="font-semibold text-xs text-[#1A1714] truncate">
                   {tool.name}
                 </span>
-                <span className="text-[10px] text-[#6E675F] tracking-wide">
+                <span className="text-[10px] text-[#6E675F] tracking-wide truncate">
                   {tool.label}
                 </span>
               </div>
